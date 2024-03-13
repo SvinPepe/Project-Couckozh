@@ -46,14 +46,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletScript.cs" />
-     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\ProductType.cs" />
+     <Compile Include="Assets\Scripts\FuckYeahBehavior.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\GunBehaviour.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Models" />
      <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Scenes" />
+     <Folder Include="Assets\Sounds" />
+     <Folder Include="Assets\Images\Materials" />
      <Folder Include="Assets\Scenes\SampleScene" />
      <Folder Include="Assets\Images" />
      <Folder Include="Assets\Materials" />
@@ -756,11 +759,11 @@
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>E:\Unity Projects\Unity\Project Couckozh\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VSCode.Editor">
-     <HintPath>E:\Unity Projects\Unity\Project Couckozh\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
      <HintPath>E:\Unity Projects\Unity\Project Couckozh\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>E:\Unity Projects\Unity\Project Couckozh\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
      <HintPath>E:\Unity Projects\Unity\Project Couckozh\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>

@@ -7,31 +7,36 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public static GameObject Player;
+    
     
     [SerializeField] private float speed = 5f;
     [SerializeField] private float sensetivity = 5f;
     [SerializeField] private GameObject CameraGameObject;
     [SerializeField] private Rigidbody rb;
+    
+    public static Transform Player;
+    
     private AudioSource _audioSource;
+    private Transform cameraTransform;
+    
     private float _xRotation;
     private float sprintSpeed;
-    private Transform cameraTransform;
     private bool canJump = true;
     
-    private void Start()
+    private void Awake()
     {
-        
+        if (Player == null)
+        {
+            Player = rb.transform;
+            Debug.Log(Player);
+        }
         cameraTransform = CameraGameObject.transform;
         _audioSource = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
     {
-        if (Player != null)
-        {
-            Player = gameObject;
-        }
+        
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         float rotationHorizontalInput = Input.GetAxis("Mouse X");
@@ -48,22 +53,20 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && canJump)
         {
-            rb.AddForce(new Vector3(0, 200f, 0));
+            rb.AddForce(new Vector3(0f, 250f, 0f));
             canJump = false;
         }
         
-        if (Input.GetKey(KeyCode.I))
-        {
-            rb.transform.position = new Vector3(0f, 0f, 0f);
-            rb.velocity = new Vector3(0f, 0f, 0f);
-            canJump = false;
-        }
+        
         
         Vector3 forwardSpeed = verticalInput * transform.forward * speed * sprintSpeed;
         Vector3 rightSpeed = horizontalInput * transform.right * speed * sprintSpeed;
-        Vector3 summSpeed = rightSpeed + forwardSpeed;
         
-        rb.velocity = new Vector3(summSpeed.x, rb.velocity.y, summSpeed.z);
+        rb.velocity = new Vector3(forwardSpeed.x + rightSpeed.x, rb.velocity.y, forwardSpeed.z + rightSpeed.z);
+        
+        //bunnyhop fix
+        //Vector3 summSpeed = rightSpeed + forwardSpeed;
+        //rb.velocity = new Vector3(summSpeed.x, rb.velocity.y, summSpeed.z);
         
         rb.angularVelocity = new Vector3(0, rotationHorizontalInput * sensetivity * 3f,  0);
         _xRotation += -rotationVerticalInput * sensetivity;
