@@ -9,12 +9,13 @@ public class EnemyMovement : MonoBehaviour
 {
     private NavMeshAgent _navMeshAgent;
     
-    public AudioSource audioSource;
+    
     public Transform player;
     
-    [SerializeField] public float detectionRadius = 20f;
-    [SerializeField] public float range = 5f;
+    [SerializeField] public float detectionRadius = 40f;
+    [SerializeField] public float range = 15f;
     [SerializeField] private float _speed = 3.5f;
+    [SerializeField] private float _inRangeSpeed = 0.5f;
     public bool isBlocked = true;
     
     public void InitializeEnemy()
@@ -46,7 +47,7 @@ public class EnemyMovement : MonoBehaviour
 
                 if (hit.distance < range)
                 {
-                    _navMeshAgent.speed = 0;
+                    _navMeshAgent.speed = _inRangeSpeed;
                 }
                 else
                 {

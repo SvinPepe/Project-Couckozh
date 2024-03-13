@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2592329528248528306}
   - component: {fileID: 273596461631534286}
   - component: {fileID: 4167918811262581074}
-  - component: {fileID: 8404091580554518578}
+  - component: {fileID: 4955482364599912875}
   m_Layer: 0
   m_Name: fuck
   m_TagString: Untagged
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d4c819aac7424458f0e958e94fec22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &8404091580554518578
+--- !u!82 &4955482364599912875
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
