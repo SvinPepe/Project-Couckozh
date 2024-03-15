@@ -12,8 +12,10 @@ public class FuckYeahBehavior : EnemyMovement
     [SerializeField] private GameObject fuckPrefab;
     [SerializeField] private GameObject yeahPrefab;
     [SerializeField] private Transform spawn;
-    public AudioSource[] seeyouAudioSource;
-    public AudioSource[] lostyouAudioSource;
+    [SerializeField] private AudioClip[] seeAudioClips;
+    [SerializeField] private AudioClip[] lostAudioClips;
+    private AudioSource audioSource;
+
     
     private float bulletSpeed = 10f;
     private float t;
@@ -26,7 +28,8 @@ public class FuckYeahBehavior : EnemyMovement
     private void Start()
     {
         InitializeEnemy();
-        
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     void FixedUpdate()
@@ -40,7 +43,8 @@ public class FuckYeahBehavior : EnemyMovement
             agroed = false;
             if (lostyouCooldown > 10f)
             {
-                lostyouAudioSource[UnityEngine.Random.Range(0, lostyouAudioSource.Length)].Play();
+                audioSource.clip = lostAudioClips[UnityEngine.Random.Range(0, lostAudioClips.Length)];
+                audioSource.Play();
                 lostyouCooldown = 0;
             }
         }    
@@ -50,7 +54,8 @@ public class FuckYeahBehavior : EnemyMovement
             agroed = true;
             if (seeyouCooldown > 10f)
             {
-                seeyouAudioSource[UnityEngine.Random.Range(0, seeyouAudioSource.Length)].Play();
+                audioSource.clip = seeAudioClips[UnityEngine.Random.Range(0, seeAudioClips.Length)];
+                audioSource.Play();
                 seeyouCooldown = 0;
             }
         }  
