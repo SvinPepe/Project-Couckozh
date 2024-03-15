@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         if (player == null)
         {
-            player = PlayerController.Player;
+            player = PlayerMovementTutorial.Player;
             Debug.Log(player);
         }
     }
@@ -33,8 +33,9 @@ public class EnemyMovement : MonoBehaviour
         RaycastHit hit;
         Ray ray = new Ray(transform.position, player.position - transform.position);
         Physics.Raycast(ray, out hit);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red);
         if (hit.collider != null){
-            if (hit.collider.gameObject != player.gameObject || hit.distance > detectionRadius) { 
+            if (!hit.collider.CompareTag("Player") || hit.distance > detectionRadius) { 
                 isBlocked = true;
                 _navMeshAgent.speed = 0;
             }   

@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject CameraGameObject;
     [SerializeField] private Rigidbody rb;
     
-    public static Transform Player;
+    
     
     private AudioSource _audioSource;
     private Transform cameraTransform;
@@ -25,11 +25,7 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-        if (Player == null)
-        {
-            Player = rb.transform;
-            Debug.Log(Player);
-        }
+        
         cameraTransform = CameraGameObject.transform;
         _audioSource = GetComponent<AudioSource>();
     }

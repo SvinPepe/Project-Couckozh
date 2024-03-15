@@ -46,10 +46,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletScript.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerCamera.cs" />
+     <Compile Include="Assets\Scripts\Player\(outdated)PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMovementTutorial.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\ProductType.cs" />
+     <Compile Include="Assets\Scripts\Player\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\FuckYeahBehavior.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Models" />
      <Folder Include="Assets\Prefabs" />
@@ -60,6 +62,7 @@
      <Folder Include="Assets\Scenes\SampleScene" />
      <Folder Include="Assets\Images" />
      <Folder Include="Assets\Materials" />
+     <Folder Include="Assets\Scripts\Player" />
      <Reference Include="UnityEngine">
      <HintPath>E:\Unity Downloads\Installs\2022.3.10f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>

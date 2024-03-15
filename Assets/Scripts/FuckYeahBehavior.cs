@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = System.Random;
@@ -28,8 +29,7 @@ public class FuckYeahBehavior : EnemyMovement
     private void Start()
     {
         InitializeEnemy();
-        audioSource = GetComponent<AudioSource>();
-
+        audioSource = GetComponent<AudioSource>();   
     }
 
     void FixedUpdate()
@@ -60,7 +60,7 @@ public class FuckYeahBehavior : EnemyMovement
             }
         }  
 
-        if (!isBlocked)
+        if (!isBlocked) // shooting
         {
             t += Time.deltaTime;
 
