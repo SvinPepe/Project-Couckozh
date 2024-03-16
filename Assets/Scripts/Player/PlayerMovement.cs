@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerMovementTutorial : MonoBehaviour
+public class PlayerMovement: MonoBehaviour
 {
     
     public static Transform Player;
@@ -57,8 +57,10 @@ public class PlayerMovementTutorial : MonoBehaviour
     private void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
-
+        
+        grounded = Physics.Raycast(transform.position, Vector3.down, 0.2f, whatIsGround);
+        Debug.Log(transform.position);
+        Debug.DrawRay(transform.position, Vector3.down, Color.magenta);
         MyInput();
         SpeedControl();
 
