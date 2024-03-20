@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         if (player == null)
         {
-            player = PlayerMovement.Player;
+            player = PlayerMovementAdvanced.Player;
             Debug.Log(player);
         }
     }
