@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCamera.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerMovementAdvanced.cs" />
      <Compile Include="Assets\Scripts\Player\(outdated)PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\Sliding.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
