@@ -48,10 +48,10 @@
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCamera.cs" />
      <Compile Include="Assets\Scripts\Player\(outdated)PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Player\Sliding.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Player\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\FuckYeahBehavior.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Models" />
      <Folder Include="Assets\Prefabs" />
