@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Player\MoveCamera.cs" />
      <Compile Include="Assets\Scripts\FuckYeahBehavior.cs" />
+     <Compile Include="Assets\Scripts\yoyo.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Models" />
      <Folder Include="Assets\Prefabs" />
