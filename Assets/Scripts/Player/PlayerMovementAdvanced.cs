@@ -180,7 +180,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
         // check if desiredMoveSpeed has changed drastically
         if(Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > 4f && moveSpeed != 0)
         {
-            StopAllCoroutines();
+            StopCoroutine(SmoothlyLerpMoveSpeed());
             StartCoroutine(SmoothlyLerpMoveSpeed());
         }
         else
