@@ -89,7 +89,7 @@ public class PlayerMovementAdvanced : MonoBehaviour
     private void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, 0.2f, whatIsGround);
+        grounded = Physics.Raycast(transform.position + new Vector3(0f, 0.1f, 0f), Vector3.down, 0.3f, whatIsGround);
 
         MyInput();
         SpeedControl();
